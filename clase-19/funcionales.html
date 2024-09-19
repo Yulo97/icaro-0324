@@ -1,0 +1,16 @@
+<style>
+  :is(li) :is(li .A) {
+    background-color: yellow;
+  }
+  li:not(.A) {
+    background-color: red;
+  }
+  li:has(#C) {
+    background-color: green;
+  }
+</style>
+<ul>
+  <li><a class="A" href="#">A</a></li>
+  <li><a class="B" href="#">B</a></li>
+  <li><a class="C" id="C" href="#"> C</a></li>
+</ul>

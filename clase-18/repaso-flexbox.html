@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="menus">
+        <li>Vestidos</li>
+        <li>Pantalones</li>
+        <li>Camisas</li>
+        <li>Remeras</li>
+        <li>Ropa Interior</li>
+      </ul>
+    </nav>
+
+    <div class="container-products">
+      <div class="card">
+        <img src="https://picsum.photos/200/200" alt="Messi levantando la copa" />
+        <div>
+          <h4>Titulo de Producto</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, provident?</p>
+          <span>$5.000</span>
+          <button class="btn">Agregar al carrito</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./images/panoramica.jpg" alt="Foto de un bebe llorando" />
+        <div>
+          <h4>Titulo de Producto</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, provident?</p>
+          <span>$5.000</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/200" alt="" />
+        <div>
+          <h4>Titulo de Producto</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, provident?</p>
+          <span>$5.000</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/200" alt="" />
+        <div>
+          <h4>Titulo de Producto</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, provident?</p>
+          <span>$5.000</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/200" alt="" />
+        <div>
+          <h4>Titulo de Producto</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, provident?</p>
+          <span>$5.000</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/200/200" alt="" />
+        <div>
+          <h4>Titulo de Producto</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, provident?</p>
+          <span>$5.000</span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .btn {
+      color: white;
+      background-color: black;
+      padding: 8px 20px;
+      text-transform: uppercase;
+      border: 0;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode",
+        Geneva, Verdana, sans-serif;
+      font-size: 11px;
+
+      &:hover {
+        background-color: rgb(28, 28, 28);
+        cursor: pointer;
+      }
+    }
+
+    .menus {
+      display: flex;
+      justify-content: space-around;
+      background-color: brown;
+      padding: 25px;
+
+      li {
+        color: white;
+        text-transform: uppercase;
+        list-style: none;
+        font-family: "Courier New", Courier, monospace;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      padding: 15px;
+      background-color: rgb(233, 233, 233);
+      border-radius: 15px;
+      margin: 25px;
+      img {
+        border-radius: 8px;
+        width: 200px;
+        height: 200px;
+      }
+    }
+    .container-products {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</html>

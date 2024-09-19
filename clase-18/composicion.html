@@ -1,0 +1,53 @@
+<div class="container">
+  <div class=""></div>
+  <div class="rojo-grande"></div>
+  <div class=""></div>
+  <div class="azul"></div>
+  <div class="blanco"></div>
+  <div class="negro"></div>
+  <div class="amarillo"></div>
+</div>
+
+<style>
+  .container {
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1.7fr 0.3fr;
+    grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
+    div {
+      background-color: white;
+    }
+  }
+
+  .rojo-grande {
+    grid-column: 2 / 4;
+    grid-row: 1 / 3;
+    background-color: red !important;
+  }
+
+  .azul {
+    background-color: blue !important;
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+  }
+
+  .blanco {
+    grid-column: 2 / 3;
+    grid-row: 3 / 5;
+  }
+
+  .negro {
+    background-color: black !important;
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+  }
+
+  .amarillo {
+    background-color: rgb(211, 211, 0) !important;
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+  }
+</style>

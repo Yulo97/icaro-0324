@@ -1,0 +1,45 @@
+<body class="container">
+  <div id="a">1</div>
+  <div id="b"><img src="https://picsum.photos/200/300" alt="" /></div>
+  <div id="c"><p>Hola Mundo</p></div>
+  <div id="d">4</div>
+  <div id="e">5</div>
+</body>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 150px 1fr 1.5fr;
+    grid-template-rows: 1fr 2fr 0.5fr 1fr;
+    gap: 10px;
+
+    div {
+      background-color: brown;
+      color: white;
+      font-size: 40px;
+    }
+
+    #a {
+      grid-column: 1 / 4;
+    }
+
+    #b {
+      grid-column: 1 / 3;
+      grid-row: 2 / 4;
+      /* grid-area: 2 / 1 / 4 / 3; */
+      background-color: rgb(7, 84, 59);
+      img {
+        margin: 25px;
+      }
+    }
+
+    #e {
+      grid-column: 1 / 4;
+    }
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+</style>
