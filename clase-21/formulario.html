@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h2>Login</h2>
+      <!-- Nombre  -->
+      <label for="name">Nombre: </label>
+      <input type="text" id="name" required minlength="5" placeholder="Ingresa tu nombre" />
+      <!-- Apellido  -->
+      <label for="lastname">Apellido: </label>
+      <input type="text" id="lastname" required minlength="5" />
+      <!-- Edad -->
+      <label for="edad">Edad: </label>
+      <input type="number" max="120" min="0" id="edad" />
+      <!-- Fecha de Nacimiento  -->
+      <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+      <input type="date" name="" id="fechaNacimiento" />
+      <!-- Email -->
+      <label for="email">Email: </label>
+      <input type="email" />
+      <!-- Contraseña -->
+      <label for="pass">Contraseña: </label>
+      <input type="password" id="pass" />
+
+      <label for="lenguaje">Tecnologia</label>
+      <select name="lenguaje" id="lenguaje">
+        <option value="js">JavaScript</option>
+        <option value="HTML" selected>HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="Php">Php</option>
+        <option value="C#">C#</option>
+      </select>
+
+      <!-- Envio el formulario -->
+      <button id="btn">Enviar</button>
+    </form>
+  </body>
+</html>
+
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 8px;
+
+    label {
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    select {
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      padding: 5px;
+    }
+  }
+</style>

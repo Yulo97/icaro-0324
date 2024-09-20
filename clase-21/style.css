@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.tarjeta {
+    background-color: #003049;
+    padding: 40px;
+    display: flex;
+    overflow-y: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    height: 90%;
+    box-shadow: -15px 0  20px rgba(0, 0, 0, 0.137);
+    overflow-y: hidden;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+.myInput {
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    color: black;
+
+    &:focus{
+        outline: none;
+    }
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: #669bbc;
+    height: 100%;
+    overflow: hidden; /* Evita scroll */
+}
+
+html{
+    height: 100%
+}
+
+.btnLogin{
+    background-color: #c1121f;
+    border: 0;
+    padding: 10px 25px;
+    transition: all 0.3s ;
+    &:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+        background-color: #780000;
+    box-shadow: -15px 0  20px rgba(0, 0, 0, 0.389);
+
+    }
+}
