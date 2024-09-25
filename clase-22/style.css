@@ -1,0 +1,142 @@
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 20px;
+    transition: all 1s ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:hover{
+    transform: scale(1.5);
+}
+
+.MyButton{
+    transition: all 500ms;
+}
+
+.MyButton:hover{
+    transform: scale(1.5);
+}
+
+p {
+    transition: all 500ms;
+}
+
+p:hover{
+    transform: rotateX(350deg)
+}
+
+.animado {
+    background-color: green;
+    grid-template-columns: 10rem 5rem 10rem;
+    transition: all 500ms ease-out;
+    &:active {
+        background-color: red;
+        transform: scale(1.1)
+    }
+}
+
+
+.keyframe {
+    margin-top: 20px ;
+    background-color: blue;
+    width: 500px;
+    height: 50px;
+    animation: pepe 300ms ease-in;
+}
+
+
+@keyframes pepe {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 500px; 
+    }
+}
+
+.contenedor-circulos {
+    border: 1px solid black;
+
+    div{
+        margin: 10px;
+        width: 50px;
+        height: 50px;
+        background-color: green;
+        border-radius: 50%;
+    }
+
+
+    .circulo1{
+        animation: moverCirculo 2s alternate infinite ease;
+    }
+    .circulo2{
+        animation: moverCirculo 2s alternate infinite linear;
+    }
+    .circulo3{
+        animation: moverCirculo 2s infinite alternate ease-out;
+    }
+    .circulo4{
+        animation: moverCirculo 2s alternate infinite ease-out;
+    }
+    .circulo5{
+        animation: moverCirculo 2s alternate infinite ease-in-out;
+    }
+}
+
+
+
+@keyframes moverCirculo {
+    0%{
+        /* transform: translate(0, 0); */
+    }
+    100%{
+        transform: translate(600px, 0);
+        opacity: 0;
+    }
+}
+
+.cubo, .cubo2 {
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    margin-left: 100px;
+    margin-top: 50px;
+    transition: transform 1.5s ease-in;
+}
+
+.cubo:hover{
+    transform: rotate(360deg);
+}
+
+.cubo{
+    animation: agrandar 1s alternate infinite;
+}
+
+.cubo2{
+    animation: rotacion 2s alternate infinite;
+}
+
+@keyframes rotacion {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes agrandar {
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+.contenedor-cubos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
