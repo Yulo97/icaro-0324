@@ -1,0 +1,27 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#fetchButton {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    border-radius: 10px;
+    background-color: #FF8C00;
+    padding: 25px;
+    margin-top: 25px;
+}

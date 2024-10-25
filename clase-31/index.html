@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Poke Api!</h1>
+
+    <label for="inputPokemon">Ingresa tu Pokemon: </label>
+    <input type="text" id="inputPokemon">
+    <button id="fetchButton" onclick="fetchPokemon()">Buscar</button>
+
+    <div class="card">
+        <h2 id="nombre"></h2>
+        <h3 id="altura"></h3>
+        <h3 id="orden"></h3>
+        <h3 id="peso"></h3>
+        <img id="imagen" src="" width="200px" height="200px">
+    </div>
+</body>
+</html>
