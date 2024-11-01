@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div>
+        <label for="email">Email: </label>
+        <input type="email" id="email">
+    </div>
+    <div>
+        <label for="edad">Edad: </label>
+        <input type="number" id="edad" required max="100" min="0">
+    </div>
+    <div>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" minlength="10">
+    </div>
+
+    <input type="submit" value="Enviar" onclick="validarDatos()">
+</body>
+
+</html>
