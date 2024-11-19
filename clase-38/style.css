@@ -1,0 +1,9 @@
+body {
+    /* background-color: brown; */
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+.contenedorMensaje{
+    margin-top: 25px ;
+}
