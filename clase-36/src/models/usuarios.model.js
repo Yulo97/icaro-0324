@@ -28,5 +28,6 @@ Usuario.hasMany(Personaje, {
   foreignKey: { name: "id_user", allowNull: false },
   onDelete: "CASCADE",
 });
+Personaje.belongsTo(Usuario, { foreignKey: "id_user" });
 
 module.exports = Usuario;

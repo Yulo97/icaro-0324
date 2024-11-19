@@ -1,4 +1,5 @@
 const Usuario = require("../models/usuarios.model.js");
+const Personaje = require("./personajes.controllers.js");
 
 const getUsuarios = async (req, res) => {
   const response = await Usuario.findAll();
@@ -16,7 +17,9 @@ const addUsuario = async (req, res) => {
 const getUsuarioById = async (req, res) => {
   const { id } = req.params;
 
-  const response = await Usuario.findByPk(id);
+  const response = await Usuario.findByPk(id, {
+    include: [{ model: Personaje, attributes: ["name"] }],
+  });
 
   if (!response)
     return res.json({ status: "warning", message: "Usuario no encontrado" });
