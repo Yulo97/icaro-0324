@@ -1,0 +1,46 @@
+body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-buttons {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    button {
+        padding: 5px 8px;
+        margin: 8px;
+        border-radius: 5px;
+        border: 0;
+        color: white;
+
+        &:hover {
+           cursor: pointer;
+           background-color: blue !important
+        }        
+    }
+}
+
+#move {
+    background-color: blueviolet;
+}
+
+#color {
+    background-color: green;
+}
+
+#float {
+    background-color: chocolate;
+}
+
+#astro {
+    transition: all 1s;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+}
