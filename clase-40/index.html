@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form  action="http://localhost:3001/" method="POST" id="formulario" enctype="multipart/form-data">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" name="apellido">
+        <label for="telefono">Telefono</label>
+        <input type="file" name="file" id="file">
+        <div>
+            <select name="caracteristica" id="caracteristica">
+                <option value="55">+55</option>
+                <option value="54" selected>+54</option>
+                <option value="53">+53</option>
+                <option value="52">+52</option>
+            </select>
+
+            <input type="number" id="telefono" name="telefono">
+        </div>
+        <div>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Enviar" id="botonEnviar">
+        </div>
+        <span id="spanAlerta"></span>
+    </form>
+</body>
+</html>
+<!-- <script src="script.js"></script> -->

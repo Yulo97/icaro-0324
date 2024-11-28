@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "formidable": "^3.5.2"
+  },
+  "name": "formidable",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "prettier": {
+    "requireConfig": false 
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
