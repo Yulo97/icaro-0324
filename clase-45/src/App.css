@@ -1,0 +1,11 @@
+.contenedorProductos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tarjetaProducto {
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+}
