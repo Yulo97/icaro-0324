@@ -1,66 +1,106 @@
+const connection = require("../db/db.js");
+
 const getAllProducts = (req, res) => {
-  console.log("Se descargaron todos los productos");
-  res.status(200).json(products);
+  connection.query("SELECT * FROM productos", (err, result, fields) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ status: "failure", message: err.message });
+    }
+
+    res.status(200).json(result);
+  });
+};
+
+const createProduct = (req, res) => {
+  const { title, price, description, categoryId, stock } = req.body;
+
+  connection.query(
+    "INSERT INTO productos (title, price, description, categoryId, stock) VALUES (?, ?, ?, ?, ?)",
+    [title, price, description, categoryId, stock],
+    (err, result, fields) => {
+      if (err) {
+        console.error(err);
+        return res
+          .status(500)
+          .json({ status: "failure", message: err.message });
+      }
+
+      res.status(200).json(result);
+    }
+  );
+};
+
+const getProductById = (req, res) => {
+  const { id } = req.params;
+
+  connection.query(
+    "SELECT * FROM productos WHERE id = ?",
+    [id],
+    (err, result, fields) => {
+      if (err) {
+        console.error(err);
+        return res
+          .status(500)
+          .json({ status: "failure", message: err.message });
+      }
+
+      res.status(200).json(result);
+    }
+  );
 };
 
 const deleteProductById = (req, res) => {
-  res.send("Producto Eliminado");
+  const { id } = req.params;
+
+  connection.query(
+    "DELETE FROM productos WHERE id = ? LIMIT 1",
+    [id],
+    (err, result, fields) => {
+      if (err) {
+        console.error(err);
+        return res
+          .status(500)
+          .json({ status: "failure", message: err.message });
+      }
+
+      res.status(200).json(result);
+    }
+  );
 };
 
-const products = [
-  {
-    name: "Laptop",
-    price: 1200,
-    description: "High-performance laptop for professionals.",
-  },
-  {
-    name: "Smartphone",
-    price: 800,
-    description: "Latest model with cutting-edge features.",
-  },
-  {
-    name: "Headphones",
-    price: 150,
-    description: "Noise-cancelling headphones with superior sound quality.",
-  },
-  {
-    name: "Gaming Chair",
-    price: 300,
-    description: "Ergonomic chair for gaming and long work sessions.",
-  },
-  {
-    name: "Keyboard",
-    price: 100,
-    description: "Mechanical keyboard with RGB lighting.",
-  },
-  {
-    name: "Mouse",
-    price: 50,
-    description: "Wireless mouse with high precision and long battery life.",
-  },
-  {
-    name: "Smartwatch",
-    price: 250,
-    description: "Stylish smartwatch with fitness tracking features.",
-  },
-  {
-    name: "Monitor",
-    price: 400,
-    description: "4K UHD monitor with vibrant colors and high refresh rate.",
-  },
-  {
-    name: "Speaker",
-    price: 200,
-    description: "Bluetooth speaker with deep bass and clear sound.",
-  },
-  {
-    name: "External Hard Drive",
-    price: 120,
-    description: "1TB portable hard drive for extra storage.",
-  },
-];
+const updateProduct = (req, res) => {
+  const { id } = req.params;
+  const { title, price, description, categoryId } = req.body;
+
+  connection.query(
+    "UPDATE productos SET title = ?, price = ?, description = ?, categoryId = ?, stock = ? WHERE id = ? LIMIT 1",
+    [title, price, description, categoryId, stock, id],
+    (err, result, fields) => {
+      if (err) {
+        console.error(err);
+        return res
+          .status(500)
+          .json({ status: "failure", message: err.message });
+      }
+
+      if (result.changedRows) {
+        res
+          .status(200)
+          .json({ status: "success", message: "Producto actualizado" });
+      } else {
+        res.status(200).json({
+          status: "warning",
+          message: "No se actualizo el producto",
+        });
+      }
+    }
+  );
+};
 
 module.exports = {
   getAllProducts,
+  getProductById,
+  createProduct,
   deleteProductById,
+  updateProduct,
 };
