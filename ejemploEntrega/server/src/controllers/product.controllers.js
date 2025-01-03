@@ -97,10 +97,37 @@ const updateProduct = (req, res) => {
   );
 };
 
+const createManyProducts = (req, res) => {
+  const productos = req.body;
+  const resultado = [];
+
+  productos.forEach((producto) => {
+    const { title, price, description, categoryId, stock } = producto;
+
+    connection.query(
+      "INSERT INTO productos (title, price, description, categoryId, stock) VALUES (?, ?, ?, ?, ?)",
+      [title, price, description, categoryId, stock],
+      (err, result, fields) => {
+        if (err) {
+          console.error(err);
+          resultado.push({ status: "failure", message: err.message });
+        }
+
+        resultado.push(result);
+      }
+    );
+  });
+
+  res
+    .status(200)
+    .json({ status: "success", message: "Productos cargados corretamente" });
+};
+
 module.exports = {
   getAllProducts,
   getProductById,
   createProduct,
   deleteProductById,
   updateProduct,
+  createManyProducts,
 };
