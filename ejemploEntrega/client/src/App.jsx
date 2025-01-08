@@ -1,15 +1,20 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { ListProduct } from "./components/ListProducts";
+import { Routes, Route } from "react-router-dom";
+import { Contacto } from "./components/pages/Contacto";
+import { Home } from "./components/pages/Home";
+import { Productos } from "./components/pages/Productos";
+import { Navbar } from "./components/template/Navbar";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <ListProduct />
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contacto" element={<Contacto />} />
+        <Route path="/tienda" element={<Productos />} />
+      </Routes>
     </>
   );
 }
