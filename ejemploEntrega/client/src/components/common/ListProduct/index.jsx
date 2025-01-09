@@ -8,7 +8,6 @@ export const ListProduct = () => {
   const fetch = async () => {
     const response = await axios.get("http://localhost:3000/productos");
 
-    console.log(response.data);
     setProductos(response.data);
   };
 

@@ -1,0 +1,7 @@
+.itemCart {
+  margin: 25px;
+  border: 0.5px solid #0000003c;
+  padding: 25px;
+  border-radius: 10px;
+  display: flex;
+}

@@ -9,6 +9,7 @@ const PORT = 3000;
 
 // Middlewares
 app.use(cors());
+app.use(express.static("public"));
 app.use(express.json());
 
 app.listen(PORT, () => console.log(`Server iniciado en el puerto ${PORT}`));

@@ -1,8 +1,16 @@
 import React from "react";
 import { Card, Button } from "antd";
 import { ShoppingCartOutlined, EyeOutlined } from "@ant-design/icons";
+import { useCartStore } from "../../../stores/useCartStore";
 
 export const CardProduct = ({ product }) => {
+  const { addCart } = useCartStore();
+
+  const handleAddCart = () => {
+    addCart(product);
+    console.log("Producto agregado al carrito");
+  };
+
   return (
     <Card
       title={product.title}
@@ -14,7 +22,7 @@ export const CardProduct = ({ product }) => {
       cover={
         <img
           alt="example"
-          src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          src={`http://localhost:3000/images/${product.image}`}
         />
       }
     >
@@ -35,6 +43,7 @@ export const CardProduct = ({ product }) => {
         <Button
           size="large"
           icon={<ShoppingCartOutlined key={"agregar-carrito"} />}
+          onClick={handleAddCart}
         >
           Comprar
         </Button>
