@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, Button } from "antd";
+import { Card, Button, Image } from "antd";
 import { ShoppingCartOutlined, EyeOutlined } from "@ant-design/icons";
 import { useCartStore } from "../../../stores/useCartStore";
+import styles from "./CardProduct.module.css";
 
 export const CardProduct = ({ product }) => {
   const { addCart } = useCartStore();
@@ -13,14 +14,12 @@ export const CardProduct = ({ product }) => {
 
   return (
     <Card
+      className={styles.tarjeta}
       title={product.title}
       bordered={false}
       hoverable
-      style={{
-        width: 300,
-      }}
       cover={
-        <img
+        <Image
           alt="example"
           src={`http://localhost:3000/images/${product.image}`}
         />
