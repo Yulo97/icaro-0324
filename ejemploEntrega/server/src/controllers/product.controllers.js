@@ -44,7 +44,7 @@ const getProductById = (req, res) => {
           .json({ status: "failure", message: err.message });
       }
 
-      res.status(200).json(result);
+      res.status(200).json(result[0]);
     }
   );
 };

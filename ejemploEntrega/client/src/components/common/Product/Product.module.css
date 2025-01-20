@@ -1,0 +1,14 @@
+.producto {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  gap: 20px;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

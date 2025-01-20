@@ -3,13 +3,20 @@ import { Card, Button, Image } from "antd";
 import { ShoppingCartOutlined, EyeOutlined } from "@ant-design/icons";
 import { useCartStore } from "../../../stores/useCartStore";
 import styles from "./CardProduct.module.css";
+import { useNavigate } from "react-router-dom";
 
 export const CardProduct = ({ product }) => {
   const { addCart } = useCartStore();
 
+  const navigate = useNavigate();
+
   const handleAddCart = () => {
     addCart(product);
     console.log("Producto agregado al carrito");
+  };
+
+  const handleViewProduct = () => {
+    navigate(`/tienda/${product.id}`);
   };
 
   return (
@@ -36,7 +43,11 @@ export const CardProduct = ({ product }) => {
           marginTop: "10px",
         }}
       >
-        <Button size="large" icon={<EyeOutlined key={"ver-producto"} />}>
+        <Button
+          size="large"
+          onClick={handleViewProduct}
+          icon={<EyeOutlined key={"ver-producto"} />}
+        >
           Ver
         </Button>
         <Button
